@@ -1,0 +1,39 @@
+# 配置freemarker
+spring:
+  ### datasource
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/security_rbac?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: admini
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    hikari:
+      auto-commit: true
+      connection-test-query: SELECT 1
+      connection-timeout: 10000
+      idle-timeout: 30000
+      max-lifetime: 900000
+      maximum-pool-size: 30
+      minimum-idle: 10
+      pool-name: HikariCP
+  ### 模板配置
+  freemarker:
+    cache: false # 是否开启模板缓存，默认true。开发时可以设置为 false
+    check-template-location: true # 是否检查模板路径是否存在，默认true
+    template-loader-path: classpath:/templates # 设置ftl文件路径
+    content-type: text/html # 设置文档类型
+    charset: UTF-8 # 设置页面编码格式
+    suffix: .ftl # 指定模板的后缀，默认为:.ftl
+  mvc:
+    static-path-pattern: /static/** # 设置静态文件路径，js,css等
+
+
+mybatis-plus:
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.xh.security.model
+  #mybatis-plus配置控制台打印完整带参数SQL语句
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: input
