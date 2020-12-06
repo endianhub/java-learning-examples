@@ -74,6 +74,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
     }
 
     /**
+     * 使用注解的方式
      *
      * @param userId
      * @return
