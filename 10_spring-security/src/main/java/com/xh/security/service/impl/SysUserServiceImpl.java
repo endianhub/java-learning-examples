@@ -47,6 +47,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUserEntity
         }
 
         // 2.查询对应的用户权限
+        // TODO 查询用户权限菜单应该先查缓存，if 缓存中没有，则查询数据库
         List<SysPermissionEntity> listPermission = permissionMapper.listPermissionByUserName(username);
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
         listPermission.forEach(permission -> {

@@ -1,0 +1,5 @@
+mayikt:
+  appid: mayikt_appid
+  appsecret: mayikt_pwd
+server:
+  port: 8081

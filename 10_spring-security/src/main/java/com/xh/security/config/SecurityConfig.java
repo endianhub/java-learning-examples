@@ -128,6 +128,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        // TODO 查询菜单应该先查缓存，if 缓存中没有，则查询数据库
         List<SysPermissionEntity> allPermission = permissionService.list();
         ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry expressionInterceptUrlRegistry = http.authorizeRequests();
         allPermission.forEach(permission -> {
