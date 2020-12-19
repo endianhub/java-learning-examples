@@ -1,10 +1,12 @@
 package com.xh.thread;
 
 /**
- * Title: JOIN循序执行
+ * Title: join顺序执行3
  * Description:
  * <p>
  * 使用join保证线程顺序问题
+ * <p>
+ * 正确的写法是在当前线程中阻塞。
  *
  * @author H.Yang
  * @date 2020/12/19
@@ -20,6 +22,7 @@ public class Thread006 implements Runnable {
     @Override
     public void run() {
         try {
+            // 阻塞当前线程
             if (thread != null) {
                 thread.join();
             }
@@ -41,10 +44,7 @@ public class Thread006 implements Runnable {
         t2.start();
         t3.start();
 
-        t1.join();
-        t2.join();
-        t3.join();
-
+        Thread.sleep(3000);
         for (int i = 0; i < 20; i++) {
             System.out.println(Thread.currentThread().getName() + ", " + i);
         }

@@ -1,6 +1,8 @@
 package com.xh.thread;
 
 /**
+ * 线程安全 - 交替执行
+ *
  * 如果共享对象的 flag 值为 false 的情况下，则只能写不能读
  * 如果共享对象的 flag 值为 false 的情况下，则只能读不能写
  */

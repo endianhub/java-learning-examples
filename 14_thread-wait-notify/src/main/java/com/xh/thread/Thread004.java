@@ -1,7 +1,7 @@
 package com.xh.thread;
 
 /**
- * Title: JOIN循序执行
+ * Title: join顺序执行1
  * Description:
  * <p>
  * 使用join保证线程顺序问题
@@ -12,6 +12,11 @@ package com.xh.thread;
 public class Thread004 implements Runnable {
     @Override
     public void run() {
+        try {
+            Thread.sleep(30);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         for (int i = 0; i < 20; i++) {
             System.out.println(Thread.currentThread().getName() + ", " + i);
         }
