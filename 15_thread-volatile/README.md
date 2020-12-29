@@ -11,6 +11,14 @@
 7. 双重检验锁为什么需要加上volatile
 8. JMM中的重排序及内存屏障
 9. volatile存在的伪共享的问题
+10. 多核cpu中为何Volatile伪共享问题
+11. 站在JMM底层分析为什么Volatile不能保证原子性
+12. 如何理解CPU缓存行读取存在性能问题
+13. 如何避免CPU存在的为共享问题
+14. 多线程情况下Volatile重排序后，可能存在的问题
+15. 单例中双重检验锁为什么需要加上volatile
+16. synchronized 与volatile存在的区别
+
 
 <br>
 
